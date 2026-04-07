@@ -1,9 +1,7 @@
-# Chrono-GlioNET
-
-**Research Team:** BlueMind
+# Hypo-TCN
 
 ## 1. Abstract
-Chrono-GlioNET is a deep learning architecture designed to predict hypotensive events in intensive care units (ICUs) prior to clinical manifestation. Moving beyond reactive bedside alarms, this system forecasts critical drops in Mean Arterial Pressure (MAP < 65 mmHg) across three distinct temporal horizons: 3-hour, 6-hour, and 12-hour windows. By providing early warning alerts, the model aims to mitigate clinical alarm fatigue and facilitate proactive interventions such as fluid resuscitation or vasopressor administration.
+Hypo-TCN is a deep learning architecture designed to predict hypotensive events in intensive care units (ICUs) prior to clinical manifestation. Moving beyond reactive bedside alarms, this system forecasts critical drops in Mean Arterial Pressure (MAP < 65 mmHg) across three distinct temporal horizons: 3-hour, 6-hour, and 12-hour windows. By providing early warning alerts, the model aims to mitigate clinical alarm fatigue and facilitate proactive interventions such as fluid resuscitation or vasopressor administration.
 
 ## 2. Dataset and Preprocessing
 The model is trained on the PhysioNet 2019 critical care dataset. The pipeline handles extreme class imbalance and irregular sampling rates inherent to Electronic Health Records (EHR).
@@ -19,7 +17,7 @@ The architecture processes 22 input features (physiological signals, demographic
 * **Multi-Head Self-Attention:** TCN outputs are passed into a Multi-Head Self-Attention block to learn global dependencies across the input window, allowing the network to dynamically weigh specific hours of the sequence that are highly predictive of an impending crash.
 
 ## 4. Objective Function
-Given the extreme rarity of hypotensive crashes compared to stable periods, standard Cross-Entropy optimization leads to high-accuracy, low-recall models. Chrono-GlioNET minimizes a Weighted Focal Loss:
+Given the extreme rarity of hypotensive crashes compared to stable periods, standard Cross-Entropy optimization leads to high-accuracy, low-recall models. Hypo-TCN minimizes a Weighted Focal Loss:
 
 $$
 FL(p_t) = -\alpha (1 - p_t)^\gamma \log(p_t)
