@@ -1,5 +1,4 @@
 # Hypo-TCN
-
 ## 1. Abstract
 Hypo-TCN is a deep learning architecture designed to predict hypotensive events in intensive care units (ICUs) prior to clinical manifestation. Moving beyond reactive bedside alarms, this system forecasts critical drops in Mean Arterial Pressure (MAP < 65 mmHg) across three distinct temporal horizons: 3-hour, 6-hour, and 12-hour windows. By providing early warning alerts, the model aims to mitigate clinical alarm fatigue and facilitate proactive interventions such as fluid resuscitation or vasopressor administration.
 
